@@ -1,0 +1,47 @@
+<ion-content>
+        <ion-row>
+            <ion-col>
+               
+                <ion-item>
+                    <ion-label position="floating">First Name</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Middle Name</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Last Name</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Gender</ion-label>
+                    <ion-select placeholder="Select One">
+                      <ion-select-option value="f">Female</ion-select-option>
+                      <ion-select-option value="m">Male</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item button="true" id="open-date-input">
+                    <ion-label>Birthdate</ion-label>
+                    <ion-text slot="end">{{ dateValue }}</ion-text>
+                    <ion-popover trigger="open-date-input" show-backdrop="false">
+                      <ng-template>
+                        <ion-datetime
+                          #popoverDatetime
+                          presentation="date"
+                          (ionChange)="dateValue = formatDate(popoverDatetime.value)"
+                        ></ion-datetime>
+                      </ng-template>
+                    </ion-popover>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating" inputmode="email">Email</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating" inputmode="numeric">Phone no.</ion-label>
+                    <ion-textarea></ion-textarea>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+</ion-content>
